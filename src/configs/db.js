@@ -4,11 +4,14 @@ let db;
 
 if (process.env.NODE_ENV === "production") {
     db = new Sequelize(process.env.PROD_DATABASE, process.env.PROD_USER, process.env.PROD_PASSWORD, {
-        dialect: process.env.PROD_DATABASE_DIALECT,
         host: process.env.PROD_HOST,
-        protocol: process.env.PROD_DATABASE_DIALECT,
+        port: 5432,
+        dialect: process.env.PROD_DATABASE_DIALECT,
         dialectOptions: {
-            ssl: true
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
         }
     });
 } else {
