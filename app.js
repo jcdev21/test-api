@@ -19,6 +19,8 @@ const userRouter = require('./src/routes/UserRoutes');
 app.use('/api/v1/users', userRouter);
 const authRouter = require('./src/routes/AuthRoutes');
 app.use('/api/v1/auth', authRouter);
+const personalRouter = require('./src/routes/PersonalRoute');
+app.use('/api/v1/personal', personalRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running is port ${PORT}`));
