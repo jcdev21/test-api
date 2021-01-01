@@ -28,10 +28,10 @@ app.use('/', (req, res) => {
         <h3>IT TEST API</h3>
         <p>
             Endpoint : <br/>
-                ${req.get('host')}/api/v1/auth/login (POST)
-                ${req.get('host')}/api/v1/auth/register (POST)
-                ${req.get('host')}/api/v1/users (GET)
-                ${req.get('host')}/api/v1/users/:id (GET)
+                ${req.get('host')}/api/v1/auth/login (POST) <br />
+                ${req.get('host')}/api/v1/auth/register (POST) <br />
+                ${req.get('host')}/api/v1/users (GET) <br />
+                ${req.get('host')}/api/v1/users/:id (GET) <br />
                 ${req.get('host')}/api/v1/personal (GET)
         </p>
     `);
