@@ -23,19 +23,18 @@ const personalRouter = require('./src/routes/PersonalRoute');
 app.use('/api/v1/personal', personalRouter);
 
 app.use('/', (req, res) => {
-    console.log(req.get('host'));
-    return res.send({
-        message: `<h3>IT TEST API</h3>
-            <p>
-                Endpoint : <br/> 
-                    ${req.get('host')}/api/v1/auth/login (POST)
-                    ${req.get('host')}/api/v1/auth/register (POST)
-                    ${req.get('host')}/api/v1/users (GET)
-                    ${req.get('host')}/api/v1/users/:id (GET)
-                    ${req.get('host')}/api/v1/personal (GET)
-            </p>
-        `
-    });
+    res.set('Content-Type', 'text/html');
+    return res.send(`
+        <h3>IT TEST API</h3>
+        <p>
+            Endpoint : <br/>
+                ${req.get('host')}/api/v1/auth/login (POST)
+                ${req.get('host')}/api/v1/auth/register (POST)
+                ${req.get('host')}/api/v1/users (GET)
+                ${req.get('host')}/api/v1/users/:id (GET)
+                ${req.get('host')}/api/v1/personal (GET)
+        </p>
+    `);
 });
 
 const PORT = process.env.PORT || 8000;
