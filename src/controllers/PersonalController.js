@@ -6,7 +6,8 @@ const getMyAccount = async (req, res) => {
         const { id } = req.app.locals.credential;
 
         const user = await User.findOne({
-            where: { id }
+            where: { id },
+            attributes: ['id', 'email', 'first_name', 'last_name']
         });
 
         if (user) {

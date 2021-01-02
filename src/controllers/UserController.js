@@ -3,7 +3,9 @@ const User = require('../models/User');
 const getAll = async (req, res) => {
 
     try {
-        const data = await User.findAll();
+        const data = await User.findAll({
+            attributes: ['id', 'email', 'first_name', 'last_name'],
+        });
 
         return res.send({
             status: true,
@@ -26,7 +28,8 @@ const getOne = async (req, res) => {
         const { id } = req.params;
 
         const user = await User.findOne({
-            where: { id }
+            where: { id },
+            attributes: ['id', 'email', 'first_name', 'last_name']
         });
 
         if (user) {

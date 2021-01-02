@@ -12,7 +12,7 @@ const compare = async (password, hashPassword) => {
 const generateToken = (id) => {
     const secretKey = process.env.SECRET_KEY || 'secretKeyToken';
 
-    const token = jwt.sign({ id }, secretKey, { expiresIn: '60m' });
+    const token = jwt.sign({ id }, secretKey, { expiresIn: '120m' });
 
     return token;
 }
