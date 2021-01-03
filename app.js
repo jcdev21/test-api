@@ -7,8 +7,14 @@ require('dotenv').config();
 // plugins
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
 app.use(compression());
+app.use(cors());
+/*
+// Membatasi akses hanya untuk web tertentu
+app.use(cors({
+    origin: process.env.FE_DOMAIN
+}));
+*/
 
 // database
 const db = require('./src/configs/db');

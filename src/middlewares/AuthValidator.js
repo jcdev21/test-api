@@ -7,8 +7,8 @@ const validateRegister = [
         .notEmpty().withMessage('first name is not empty')
         .trim().escape(),
     check('lastName')
-        .exists().withMessage('first name is required')
-        .notEmpty().withMessage('first name is not empty')
+        .exists().withMessage('last name is required')
+        .notEmpty().withMessage('last name is not empty')
         .trim().escape(),
     check('email')
         .exists().withMessage('username is required')
