@@ -11,8 +11,8 @@ const validateRegister = [
         .notEmpty().withMessage('last name is not empty')
         .trim().escape(),
     check('email')
-        .exists().withMessage('username is required')
-        .notEmpty().withMessage('username is not empty')
+        .exists().withMessage('email is required')
+        .notEmpty().withMessage('email is not empty')
         .isEmail().withMessage('email not valid')
         .trim().escape()
         .custom( async (value) => {
